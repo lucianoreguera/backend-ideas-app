@@ -6,6 +6,9 @@ const { HomeService } = require('../services');
 const { User, Idea, Comment } = require('../models');
 
 const { HomeController } = require('../controllers');
+
+const { UserRepository, IdeaRepository, CommentRepository } = require('../repositories');
+
 const { HomeRoutes } = require('../routes/index.routes');
 const Routes = require('../routes');
 
@@ -30,6 +33,10 @@ container.register({
     User: asValue(User),
     Idea: asValue(Idea),
     Comment: asValue(Comment)
+}).register({
+    UserRepository: asClass(UserRepository).singleton(),
+    IdeaRepository: asClass(IdeaRepository).singleton(),
+    CommentRepository: asClass(CommentRepository).singleton()
 });
 
 module.exports = container;
