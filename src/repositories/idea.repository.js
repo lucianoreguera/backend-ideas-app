@@ -5,7 +5,7 @@ let _idea = null;
 class IdeaRepository extends BaseRepository {
     constructor({ Idea }) {
         super(Idea);
-        _user = Idea;
+        _idea = Idea;
     }
 
     async getUserIdeas(author) {
