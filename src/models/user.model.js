@@ -32,7 +32,7 @@ UserSchema.pre('save', async function(next) {
     const user = this;
 
     // Si no se esta modificando el usuario next
-    if (!user.isModify('password')) {
+    if (!user.isModified('password')) {
         return next();
     }
 
